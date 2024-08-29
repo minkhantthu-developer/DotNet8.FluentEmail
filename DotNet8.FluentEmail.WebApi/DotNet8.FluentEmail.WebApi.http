@@ -1,0 +1,6 @@
+@DotNet8.FluentEmail.WebApi_HostAddress = http://localhost:5075
+
+GET {{DotNet8.FluentEmail.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
