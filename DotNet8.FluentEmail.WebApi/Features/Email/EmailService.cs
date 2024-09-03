@@ -19,5 +19,15 @@ namespace DotNet8.FluentEmail.WebApi.Features.Email
                               .Body(emailMetaModel.Body)
                               .SendAsync(cancellationToken);
         }
+
+        public async Task SendWithAttachment(EmailMetaModel emailMetaModel, CancellationToken cancellationToken)
+        {
+            await _fluentEmail.To(emailMetaModel.ToAddress)
+                .Subject(emailMetaModel.Subject)
+                .AttachFromFilename(emailMetaModel.AttachmentPath,
+                  attachmentName: Path.GetFileName(emailMetaModel.AttachmentPath))
+                .Body(emailMetaModel.Body)
+                .SendAsync();
+        }
     }
 }

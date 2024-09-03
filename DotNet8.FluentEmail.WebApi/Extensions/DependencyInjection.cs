@@ -8,8 +8,7 @@
             var fromEmail = configuration.GetSection("FluentEmail:FromEmail")?.Value;
 
             serices.AddFluentEmail(fromEmail)
-                   .AddSmtpSender("smtp.gmail.com", 587, fromEmail, "tjqc zvli bkqd hzjt")
-                   .AddRazorRenderer();
+                   .AddSmtpSender("smtp.gmail.com", 587, fromEmail, "tjqc zvli bkqd hzjt");
         }
     }
 }
