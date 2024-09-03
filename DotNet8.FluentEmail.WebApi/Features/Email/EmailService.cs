@@ -12,7 +12,7 @@ namespace DotNet8.FluentEmail.WebApi.Features.Email
             _fluentEmail = fluentEmail;
         }
 
-        public async Task Send(EmailMetaModel emailMetaModel,CancellationToken cancellationToken)
+        public async Task Send(EmailMetaModel emailMetaModel, CancellationToken cancellationToken)
         {
             await _fluentEmail.To(emailMetaModel.ToAddress)
                               .Subject(emailMetaModel.Subject)
