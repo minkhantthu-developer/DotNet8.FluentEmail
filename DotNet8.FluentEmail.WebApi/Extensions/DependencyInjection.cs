@@ -5,16 +5,10 @@
         public static void AddEmail(this IServiceCollection serices,
                         IConfigurationManager configuration)
         {
-            var emailSettings = configuration.GetSection("EmailSettings");
+            var fromEmail = configuration.GetSection("FluentEmail:FromEmail")?.Value;
 
-            var defaultFromEmail = emailSettings["DefaultFromEmail"];
-            var host = emailSettings["SMTPSetting:Host"];
-            var port = emailSettings.GetValue<int>("Port");
-            var userName = emailSettings["UserName"];
-            var password = emailSettings["Password"];
-
-            serices.AddFluentEmail(defaultFromEmail)
-                   .AddSmtpSender(host, port, userName, password);
+            serices.AddFluentEmail(fromEmail)
+                   .AddSmtpSender("smtp.gmail.com", 587, fromEmail, "tjqc zvli bkqd hzjt");
         }
     }
 }
