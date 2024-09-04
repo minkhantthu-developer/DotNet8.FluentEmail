@@ -25,10 +25,10 @@ namespace DotNet8.FluentEmail.WebApi.Features.Email
         [HttpGet("withattachment")]
         public async Task<IActionResult> SendWithAttachment(CancellationToken cancellationToken)
         {
-            EmailMetaModel emailModel = new("b46on3367@gmail.com"
+            EmailMetaModel emailModel = new("mglinnthithtoo@gmail.com"
                 , "Fluent Test Email"
                 , "This is the Test Email from Fluent Email",
-                "C:\\Baby lay\\ဘေဘီလေးနှင်းအိလှိုင်Part1.txt");
+                "C:\\HearnLeon\\asp.net.logo.png");
             await _emailService.SendWithAttachment(emailModel, cancellationToken);
             return Ok("Send Successfully");
         }
