@@ -9,5 +9,8 @@ namespace DotNet8.FluentEmail.WebApi.Features.Email
 
         Task SendWithAttachment(EmailMetaModel emailMetaModel,
             CancellationToken cancellationToken);
+
+        Task SendMultipleEmail(List<EmailMetaModel> lstEmail,
+            CancellationToken cancellationToken);
     }
 }
